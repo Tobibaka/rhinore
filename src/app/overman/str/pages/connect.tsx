@@ -17,7 +17,7 @@ const Connect = () => {
       sender: 'Control Head',
       role: 'control',
       message: 'Good morning team. Please report any unusual observations immediately.',
-      timestamp: '08:00 AM',
+      timestamp: 'Oct 5, 2025 08:00 AM',
       isPinned: false
     },
     {
@@ -26,7 +26,7 @@ const Connect = () => {
       sender: 'AI System',
       role: 'system',
       message: 'ALERT: High water content detected in Tunnel 3, Zone D. Immediate attention required.',
-      timestamp: '10:25 AM',
+      timestamp: 'Oct 5, 2025 10:25 AM',
       isPinned: true,
       severity: 'critical',
       attachments: ['tunnel3-water.jpg']
@@ -37,7 +37,7 @@ const Connect = () => {
       sender: 'Overman 2',
       role: 'overman',
       message: 'Confirmed. Water level rising in Zone D. Drainage pumps activated.',
-      timestamp: '10:28 AM',
+      timestamp: 'Oct 5, 2025 10:28 AM',
       isPinned: false
     },
     {
@@ -47,7 +47,7 @@ const Connect = () => {
       role: 'overman',
       title: 'Tunnel 2 - Temperature Sensor Malfunction',
       message: 'Sensor showing intermittent readings. Needs calibration.',
-      timestamp: '11:40 AM',
+      timestamp: 'Oct 5, 2025 11:40 AM',
       status: 'Open',
       comments: 2,
       isPinned: false
@@ -58,7 +58,7 @@ const Connect = () => {
       sender: 'Control Head',
       role: 'control',
       message: '@Overman3 Maintenance team dispatched. ETA 30 minutes.',
-      timestamp: '11:45 AM',
+      timestamp: 'Oct 5, 2025 11:45 AM',
       isPinned: false
     },
     {
@@ -67,7 +67,7 @@ const Connect = () => {
       sender: 'IoT Device #A42',
       role: 'iot',
       message: 'WARNING: Pore pressure spike detected in Tunnel 1, Zone B.',
-      timestamp: '12:15 PM',
+      timestamp: 'Oct 5, 2025 12:15 PM',
       isPinned: true,
       severity: 'warning',
       attachments: []
@@ -78,7 +78,7 @@ const Connect = () => {
       sender: 'Overman 5',
       role: 'overman',
       message: 'Inspecting now. Minor equipment vibration noted earlier.',
-      timestamp: '12:18 PM',
+      timestamp: 'Oct 5, 2025 12:18 PM',
       isPinned: false
     },
     {
@@ -88,7 +88,7 @@ const Connect = () => {
       role: 'overman',
       title: 'Tunnel 4 - Ventilation System Check Required',
       message: 'Air flow seems reduced in Zone C. Requesting inspection.',
-      timestamp: '01:30 PM',
+      timestamp: 'Oct 5, 2025 01:30 PM',
       status: 'In Review',
       comments: 5,
       isPinned: false,
@@ -100,7 +100,7 @@ const Connect = () => {
       sender: 'Overman 4',
       role: 'overman',
       message: 'All clear in my section. Routine patrol completed.',
-      timestamp: '02:00 PM',
+      timestamp: 'Oct 5, 2025 02:00 PM',
       isPinned: false
     },
     {
@@ -109,7 +109,7 @@ const Connect = () => {
       sender: 'Control Head',
       role: 'control',
       message: 'Great work everyone. Stay vigilant. Next briefing at 16:00.',
-      timestamp: '02:30 PM',
+      timestamp: 'Oct 5, 2025 02:30 PM',
       isPinned: false
     }
   ]);
@@ -299,7 +299,7 @@ const Connect = () => {
         sender: 'Overman 6',
         role: 'overman',
         message: messageInput,
-        timestamp: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
+        timestamp: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ' ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
         isPinned: false,
         attachments: selectedFiles.map(file => ({
           name: file.name,
@@ -388,7 +388,7 @@ const Connect = () => {
   const pinnedMessages = messages.filter(msg => msg.isPinned);
 
   return (
-    <div className="min-h-screen bg-gray-600 flex flex-col">
+    <div className="min-h-screen bg-gray-600 flex flex-col overflow-auto">
       
       {/* Header */}
       <div className="bg-gray-700 border-b border-gray-500 shadow-lg p-4">
