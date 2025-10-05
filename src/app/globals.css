@@ -5,7 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -23,4 +23,40 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  @keyframes radial-flow {
+    0% {
+      background-size: 190% 190%;
+      opacity: 0.9;
+    }
+    50% {
+      background-size: 120% 120%;
+      opacity: 1;
+    }
+    100% {
+      background-size: 190% 190%;
+      opacity: 0.9;
+    }
+  }
+
+  .animate-gradient {
+    animation: radial-flow 3s ease-in-out infinite;
+    background-position: center;
+  }
+
+  .bg-hero-gradient {
+    background-image: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(34, 211, 238, 0.25) 15%,
+      rgba(16, 185, 129, 0.45) 35%,
+      rgba(23, 255, 255, 0.959) 45%,
+      rgba(76, 138, 246, 0.936) 60%,
+      rgb(224, 251, 19) 75%,
+      rgba(243, 60, 4, 0.982) 100%
+
+    );
+  }
 }

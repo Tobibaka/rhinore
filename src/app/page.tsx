@@ -13,10 +13,10 @@ export default function HomePage() {
       </div>
       
       {/* Content overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-center">
-        <Link 
+      <div className="relative py-3 px-2 z-10 flex flex-col items-center justify-center">
+        <Link
           href="/about"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+          className="relative inline-flex items-center justify-center px-10 py-4 font-bold text-white text-lg rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 bg-hero-gradient bg-[length:200%_200%] animate-gradient"
         >
           Know More
         </Link>
