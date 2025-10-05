@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import {
   HomeIcon,
@@ -26,11 +27,12 @@ export default function Sidebar({
    onNavigate: (page: string) => void
  }) {
    return (
-     <aside className="w-64 h-screen bg-white text-gray-800 flex flex-col border-r border-gray-200">
-       <div className="p-6">
-         <h1 className="text-2xl font-bold text-gray-900">Control-Head</h1>
+     <aside className="overflow-y-auto w-65 h-screen bg-white text-gray-800 flex flex-col border-r border-gray-200">
+      <div className="p-6  bg-gray-300 text-white rounded-r-full shadow-yellow-500 shadow-2xl">
+        <h1 className="text-5xl font-bold text-gray-900">Admins</h1>
+        <h2 className="text-sm font-light text-gray-500 px-1">BETA</h2>
        </div>
-       <nav className="flex-1 px-4 py-2" aria-label="Sidebar Navigation">
+       <nav className="flex-1 px-4 py-40" aria-label="Sidebar Navigation">
          <ul className="space-y-2">
            {navItems.map((item) => (
              <li key={item.id}>
@@ -38,30 +40,30 @@ export default function Sidebar({
                  onClick={() => onNavigate(item.id)}
                  className={`w-full flex items-center gap-4 px-5 py-4 rounded-lg text-left transition-colors ${
                    activePage === item.id
-                     ? 'bg-blue-600 text-white'
+                     ? 'bg-gray-600 text-white'
                      : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                  }`}
                >
-                 <item.icon className="w-6 h-6" aria-hidden="true" />
-                 <span className="text-lg font-medium">{item.name}</span>
+                 <item.icon className="w-9 h-9" aria-hidden="true" />
+                 <span className="text-lg font-normal hover:mask-radial-from-green-500">{item.name}</span>
                </button>
              </li>
            ))}
          </ul>
        </nav>
        <div className="p-4 border-t border-gray-200">
-         <button
-           onClick={() => {
-             if (typeof window !== 'undefined') {
-               window.location.href = '/login';
-             }
-           }}
-           className="flex items-center gap-4 px-5 py-3 rounded-lg text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
-         >
-           <ArrowLeftOnRectangleIcon className="w-6 h-6" aria-hidden="true" />
-           <span className="text-lg font-medium">Log Out</span>
-         </button>
-       </div>
+               <button
+                 onClick={() => {
+                    if (typeof window !== 'undefined') {
+                      window.location.href = '/login';
+                    }
+                  }}
+                 className="flex items-center gap-6 px-10 py-3 rounded-lg text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+               >
+                 <ArrowLeftOnRectangleIcon className="w-9 h-9" aria-hidden="true" />
+                 <span className="text-lg font-medium">Log Out</span>
+               </button>
+      </div>
      </aside>
    )
 }

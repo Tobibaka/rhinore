@@ -16,26 +16,27 @@ import Connect from '@/app/admin/str/pages/connect'
 import Tracking from '@/app/admin/str/pages/tracking'
 import Escape from '@/app/admin/str/pages/escape'
 import { Navigate } from 'react-router-dom'
+import tracking from '@/app/admin/str/pages/tracking'
 
 export default function Admin() {
   const [activePage, setActivePage] = useState('dashboard')
 
   const pages: Record<string, React.ReactNode> = {
     dashboard: <Dashboard />,
-    task: <Sensor />,
-    report: <Approval />,
+    sensor: <Sensor />,
+    approval: <Approval />,
     connect: <Connect />,
-    help: <Tracking />,
-    spot: <Escape />,
+    tracking: <Tracking />,
+    escape: <Escape />,
     login: <div>Logging out...</div>,
   }
 
   return (
     <div className="flex">
-      <Sidebar activePage={activePage} onNavigate={setActivePage} />
-      <Layout>
-        <div className="w-full">{pages[activePage] || <Dashboard />}</div>
-      </Layout>
+          <Sidebar activePage={activePage} onNavigate={setActivePage} />
+          <Layout>
+            <div className="w-445 h-screen overflow-auto">{pages[activePage] || <Dashboard />}</div>
+          </Layout>
     </div>
   )
 }
