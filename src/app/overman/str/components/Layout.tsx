@@ -16,10 +16,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       
       
       {/* Main content area */}
-      <main className="flex-1 p-8">
-        <div className={`rounded-lg shadow-lg p-6 transition-colors ${
-         'bg-white/80 backdrop-blur border border-gray-200 text-gray-900'
-        }`}>
+      <main>
+        <div>
           {children ? children : <Outlet />}
         </div>
       </main>

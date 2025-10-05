@@ -28,7 +28,7 @@ export default function Sidebar({
   onNavigate: (page: string) => void
 }) {
   return (
-    <aside className="w-64 h-screen bg-white text-gray-800 flex flex-col border-r border-gray-200">
+    <aside className="overflow-y-auto w-65 h-screen bg-white text-gray-800 flex flex-col border-r border-gray-200">
       <div className="p-6  bg-gray-300 text-white rounded-r-full shadow-teal-500 shadow-2xl">
         <h1 className="text-5xl font-bold text-gray-900">Overman</h1>
         <h2 className="text-sm font-light text-gray-500 px-1">BETA</h2>

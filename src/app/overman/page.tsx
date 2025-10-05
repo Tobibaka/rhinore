@@ -29,7 +29,7 @@ export default function Overman() {
     <div className="flex">
       <Sidebar activePage={activePage} onNavigate={setActivePage} />
       <Layout>
-        <div className="w-full">{pages[activePage] || <Dashboard />}</div>
+        <div className="w-445 h-screen overflow-auto">{pages[activePage] || <Dashboard />}</div>
       </Layout>
     </div>
   )
