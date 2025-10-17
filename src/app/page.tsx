@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="relative w-full h-screen ">
       {/* Spline background canvas */}
-      <div className="fixed inset-0 w-full h-full z-0 border-shadow-lg ">
+      <div className="fixed inset-0 w-full h-full z-10 border-shadow-lg ">
         <Spline scene="https://prod.spline.design/0wEpI2JUaAOhduOJ/scene.splinecode" />
       </div>
       
